@@ -1,0 +1,3 @@
+[submodule "third_party/alexforencich_ethernet"]
+	path = third_party/alexforencich_ethernet
+	url = git@github.com:alexforencich/verilog-ethernet.git
