@@ -21,23 +21,12 @@ set_property board_part $board_part [current_project]
 
 # Alex Forencich Ethernet IP
 add_files -norecurse {
-    ../third_party/alexforencich_ethernet/rtl/eth_mac_1g_rgmii_fifo.v
-    ../third_party/alexforencich_ethernet/rtl/eth_mac_1g_rgmii.v
-    ../third_party/alexforencich_ethernet/rtl/rgmii_phy_if.v
-    ../third_party/alexforencich_ethernet/rtl/ssio_ddr_in.v
-    ../third_party/alexforencich_ethernet/rtl/iddr.v
-    ../third_party/alexforencich_ethernet/rtl/oddr.v
-    ../third_party/alexforencich_ethernet/rtl/eth_mac_1g.v
-    ../third_party/alexforencich_ethernet/rtl/axis_gmii_rx.v
-    ../third_party/alexforencich_ethernet/rtl/axis_gmii_tx.v
-    ../third_party/alexforencich_ethernet/rtl/lfsr.v
-    ../third_party/alexforencich_ethernet/lib/axis/rtl/axis_async_fifo_adapter.v
-    ../third_party/alexforencich_ethernet/lib/axis/rtl/axis_adapter.v
-    ../third_party/alexforencich_ethernet/lib/axis/rtl/axis_async_fifo.v
+    ../blinky.v
 }
 
-# add_files -fileset constrs_1 -norecurse {}
-# set_property PROCESSING_ORDER EARLY [get_files -of_objects [get_filesets constrs_1]]
+add_files -fileset constrs_1 -norecurse {
+    ../zub1cg.xdc
+}
 
 create_bd_design "design_1"
 source ../$bd_tcl_filename
